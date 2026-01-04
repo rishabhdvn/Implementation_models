@@ -181,6 +181,8 @@ hello
 - convert to PyTorch
 - add batching
 
+This project serves as the advanced "add-on" to standard Recurrent Neural Networks (RNNs). While our previous RNN implementation was capable of handling simple sequence tasks, it suffered from a critical limitation known as the Vanishing Gradient Problem.The Problem with Standard RNNsIn a standard RNN, data is transformed at every single time step using a tanh activation.Short-term memory is good: It remembers the immediate past well.Long-term memory fails: As the sequence gets longer (e.g., a long paragraph), the gradients (signals used for learning) become smaller and smaller until they vanish. The network effectively "forgets" the beginning of the sequence by the time it reaches the end.The LSTM SolutionThis repository implements the solution: The Long Short-Term Memory (LSTM) Network.Instead of simply rewriting the memory at every step, the LSTM introduces a "Cell State" ($C_t$)—a protected memory highway that runs through the entire sequence.Key Upgrades in this Code:Gating Mechanisms: Unlike the RNN's single layer, this implementation adds three gates (Forget, Input, Output) to regulate information flow.Separate States: We now manage two state vectors:Hidden State (h): For immediate predictions.Cell State (C): For preserving long-term context.
+
 If you want to build any of those, open an issue or try it yourself 🙂
 
 ---
